@@ -13,6 +13,8 @@
     <div>{{{ $sample->username }}}</div>
     <div>{{{ $sample->created_at }}}</div>
     <div>{{{ $sample->updated_at }}}</div>
+    <a href="/sample/edit/{{$sample->id}}">修正</a>
+    <a href="/sample/delete/{{$sample->id}}">削除</a>
 </div>
 <hr>
 @endforeach

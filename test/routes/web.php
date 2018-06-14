@@ -22,3 +22,7 @@ Route::get('sample/model/{type?}', 'SampleController@model');
 Route::get('/sample', 'SamplesController@getIndex');
 Route::get('/sample/create', 'SamplesController@create');
 Route::post('/sample/create', 'SamplesController@store');
+Route::get('/sample/edit/{id}', 'SamplesController@edit');
+Route::post('/sample/edit', 'SamplesController@update');
+Route::get('/sample/delete/{id}', 'SamplesController@show');
+Route::post('/sample/delete', 'SamplesController@delete');

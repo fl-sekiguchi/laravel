@@ -35,4 +35,34 @@ class SamplesController extends Controller
 
       return view('sample.store');
     }
+
+    public function edit(Request $request, $id)
+    {
+      $s = Sample::find($id);
+      return view('sample.edit', ['sample' => $s]);
+    }
+
+    public function update(Request $request)
+    {
+      $s = Sample::find($request->id);
+      $s->title = $request->title;
+      $s->body = $request->body;
+      $s->username = $request->username;
+      $s->save();
+
+      return view('sample.update');
+    }
+
+    public function show(Request $request, $id)
+    {
+      $s = Sample::find($id);
+      return view('sample.show', ['sample' => $s]);
+    }
+
+    public function delete(Request $request)
+    {
+      Sample::destroy($request->id);
+      return view('sample.delete');
+    }
+
 }
